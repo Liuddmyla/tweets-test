@@ -1,0 +1,27 @@
+.container{  
+    width: 500px;
+    height: 500px;   
+    margin: 50px auto;   
+    background-image: url(../../images/picture.png), linear-gradient(114.99deg, #471CA9 -0.99%, #5736A3 54.28%, #4B2A99 78.99%);
+    background-repeat: no-repeat;
+    background-position: center;   
+    border-radius: 50%;
+}
+
+.text{
+    position: absolute;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: #EBD8FF;
+    top: 450px;
+    left: 50%;
+    transform: translateX(-50%);
+}
