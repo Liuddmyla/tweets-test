@@ -1,4 +1,3 @@
-
 import { Loader } from "components/Loader";
 import UserList from "components/usersList/UsersList";
 import { useEffect, useState } from "react";
@@ -18,28 +17,27 @@ const Tweets = () => {
   const [error, setError] = useState(null); 
   const [page, setPage] = useState(1); 
   
-useEffect(() => {
-  const URL = `https://645242e1a2860c9ed4068029.mockapi.io/users?page=${page}&limit=3`;
+  useEffect(() => {
+    const URL = `https://645242e1a2860c9ed4068029.mockapi.io/users?page=${page}&limit=3`;
 
-  setStatus(Status.PENDING);
+    setStatus(Status.PENDING);
   
-  fetch(URL, {
-  method: 'GET',
-  headers: {'content-type':'application/json'},
-}).then(res => {
-  if (res.ok) {
+    fetch(URL, {
+      method: 'GET',
+      headers: {'content-type':'application/json'},
+    }).then(res => {
+      if (res.ok) {
       return res.json();
-  }  
-}).then(tasks => {
-  setUsers((prev)=>[...prev, ...tasks]);
-  setStatus(Status.RESOLVED); 
-}).catch(error => {
-  setError(error);
-  setStatus(Status.REJECTED);
-})
+      }  
+    }).then(tasks => {
+      setUsers((prev)=>[...prev, ...tasks]);
+      setStatus(Status.RESOLVED); 
+    }).catch(error => {
+      setError(error);
+      setStatus(Status.REJECTED);
+    })
   
-}, [page, setPage])  
-  
+  }, [page, setPage])    
  
   const handleClick = () => {
     setPage((prev) => prev + 1);
