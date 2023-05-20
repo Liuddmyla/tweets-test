@@ -1,4 +1,5 @@
 import User from "components/user/User";
+import PropTypes from 'prop-types';
 import css from "./UsersList.module.css";
 
 const UserList = ({ users }) => { 
@@ -20,3 +21,14 @@ const UserList = ({ users }) => {
 
 
 export default UserList;
+
+UserList.propTypes = {
+    users: PropTypes.arrayOf(
+        PropTypes.shape({
+            id: PropTypes.string.isRequired,
+            avatar: PropTypes.string.isRequired,
+            tweets: PropTypes.string.isRequired,
+            followers: PropTypes.number.isRequired,
+       }) 
+    )    
+}
